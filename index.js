@@ -1,0 +1,16 @@
+const express = require('express')
+const server = express()
+const helmet = require('helmet')
+
+server.use(helmet())
+server.use(express.json())
+
+const URL = 5000
+
+server.get('/', (req, res) => {
+    res.status(400).json('hello')
+})
+
+server.listen(URL, () => {
+    console.log(`listening on port ${URL}`)
+})
